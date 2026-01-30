@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Đơn hàng</title>
+    <link rel="stylesheet" href="tieuluan.css">
+</head>
+<body>
+    <img class="logo" src="anh/logo.jpg" alt="logo thương hiệu" width="150" height="150" 
+    a href="https://docs.google.com/presentation/d/1WUGrqCXErjkxNtqIEE9QIBVnRzzP3jLN/edit?slide=id.p24#slide=id.p24" target="_blank"></a>
+    <h1>HỆ THỐNG QUẢN LÝ ĐƠN HÀNG</h1>
+    
+    <!-- Menu điều hướng -->
+    <div id="menu">
+        <h2>MENU CHÍNH</h2>
+        <button onclick="showSection('khachhang')">Quản lý Khách hàng</button>
+        <button onclick="showSection('sanpham')">Quản lý Sản phẩm</button>
+        <button onclick="showSection('donhang')">Quản lý Đơn hàng</button>
+        <button onclick="showSection('nhanvien')">Quản lý Nhân viên</button>
+        <button onclick="showSection('thanhtoan')">Quản lý Thanh toán</button>
+    </div>
+
+    <hr>
+    <!-- Phần Quản lý Khách hàng -->
+    <div id="khachhang">
+        <h2>QUẢN LÝ KHÁCH HÀNG</h2>
+        
+        <h3>Thêm Khách hàng mới</h3>
+        <form>
+            <table class="kh" border="5">
+                <tr>
+                    <td>Mã khách hàng:</td>
+                    <td><input type="text" name="makh" required></td>
+                </tr>
+                <tr>
+                    <td>Tên khách hàng:</td>
+                    <td><input type="text" name="tenkh" required></td>
+                </tr>
+                <tr>
+                    <td>Số điện thoại:</td>
+                    <td><input type="text" name="sdt" required></td>
+                </tr>
+                <tr>
+                    <td>Địa chỉ:</td>
+                    <td><input type="text" name="diachi" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit">Thêm</button>
+                        <button type="reset">Làm mới</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+        <h3>Danh sách Khách hàng</h3>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Mã KH</th>
+                    <th>Tên KH</th>
+                    <th>SĐT</th>
+                    <th>Địa chỉ</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>KH001</td>
+                    <td>Nguyễn Văn A</td>
+                    <td>0901234567</td>
+                    <td>123 Lê Lợi, Q1, TPHCM</td>
+                    <td>
+                        <button>Sửa</button>
+                        <button>Xóa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>KH002</td>
+                    <td>Trần Thị B</td>
+                    <td>0912345678</td>
+                    <td>456 Nguyễn Huệ, Q1, TPHCM</td>
+                    <td>
+                        <button>Sửa</button>
+                        <button>Xóa</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Phần Quản lý Sản phẩm -->
+    <div id="sanpham" style="display:none;">
+        <h2>QUẢN LÝ SẢN PHẨM</h2>
+        
+        <h3>Thêm Sản phẩm mới</h3>
+        <form>
+            <table>
+                <tr>
+                    <td>Mã sản phẩm:</td>
+                    <td><input type="text" name="masp" required></td>
+                </tr>
+                <tr>
+                    <td>Tên sản phẩm:</td>
+                    <td><input type="text" name="tensp" required></td>
+                </tr>
+                <tr>
+                    <td>Đơn giá:</td>
+                    <td><input type="number" name="dongia" required></td>
+                </tr>
+                <tr>
+                    <td>Số lượng tồn:</td>
+                    <td><input type="number" name="soluongton" required></td>
+                </tr>
+                <tr>
+                    <td>Loại sản phẩm:</td>
+                    <td>
+                        <select name="maloai" required>
+                            <option value="">-- Chọn loại --</option>
+                            <option value="LSP001">Điện tử</option>
+                            <option value="LSP002">Thời trang</option>
+                            <option value="LSP003">Thực phẩm</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit">Thêm</button>
+                        <button type="reset">Làm mới</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+        <h3>Danh sách Sản phẩm</h3>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Mã SP</th>
+                    <th>Tên SP</th>
+                    <th>Đơn giá</th>
+                    <th>Số lượng tồn</th>
+                    <th>Loại SP</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>SP001</td>
+                    <td>Laptop Dell</td>
+                    <td>15,000,000đ</td>
+                    <td>50</td>
+                    <td>Điện tử</td>
+                    <td>
+                        <button>Sửa</button>
+                        <button>Xóa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>SP002</td>
+                    <td>Áo sơ mi</td>
+                    <td>250,000đ</td>
+                    <td>200</td>
+                    <td>Thời trang</td>
+                    <td>
+                        <button>Sửa</button>
+                        <button>Xóa</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Phần Quản lý Đơn hàng -->
+    <div id="donhang" style="display:none;">
+        <h2>QUẢN LÝ ĐƠN HÀNG</h2>
+        
+        <h3>Tạo Đơn hàng mới</h3>
+        <form>
+            <table>
+                <tr>
+                    <td>Mã đơn hàng:</td>
+                    <td><input type="text" name="madon" required></td>
+                </tr>
+                <tr>
+                    <td>Khách hàng:</td>
+                    <td>
+                        <select name="makh" required>
+                            <option value="">-- Chọn khách hàng --</option>
+                            <option value="KH001">KH001 - Nguyễn Văn A</option>
+                            <option value="KH002">KH002 - Trần Thị B</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nhân viên:</td>
+                    <td>
+                        <select name="manv" required>
+                            <option value="">-- Chọn nhân viên --</option>
+                            <option value="NV001">NV001 - Lê Văn C</option>
+                            <option value="NV002">NV002 - Phạm Thị D</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ngày đặt:</td>
+                    <td><input type="date" name="ngaydat" required></td>
+                </tr>
+                <tr>
+                    <td>Tổng tiền:</td>
+                    <td><input type="number" name="tongtien" required></td>
+                </tr>
+                <tr>
+                    <td>Trạng thái:</td>
+                    <td>
+                        <select name="trangthai" required>
+                            <option value="Chờ xử lý">Chờ xử lý</option>
+                            <option value="Đang giao">Đang giao</option>
+                            <option value="Hoàn thành">Hoàn thành</option>
+                            <option value="Đã hủy">Đã hủy</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit">Tạo đơn</button>
+                        <button type="reset">Làm mới</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+        <h3>Danh sách Đơn hàng</h3>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Mã đơn</th>
+                    <th>Khách hàng</th>
+                    <th>Nhân viên</th>
+                    <th>Ngày đặt</th>
+                    <th>Tổng tiền</th>
+                    <th>Trạng thái</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>DH001</td>
+                    <td>Nguyễn Văn A</td>
+                    <td>Lê Văn C</td>
+                    <td>20/01/2026</td>
+                    <td>15,500,000đ</td>
+                    <td>Đang giao</td>
+                    <td>
+                        <button>Chi tiết</button>
+                        <button>Sửa</button>
+                        <button>Xóa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>DH002</td>
+                    <td>Trần Thị B</td>
+                    <td>Phạm Thị D</td>
+                    <td>21/01/2026</td>
+                    <td>750,000đ</td>
+                    <td>Hoàn thành</td>
+                    <td>
+                        <button>Chi tiết</button>
+                        <button>Sửa</button>
+                        <button>Xóa</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Phần Quản lý Nhân viên -->
+    <div id="nhanvien" style="display:none;">
+        <h2>QUẢN LÝ NHÂN VIÊN</h2>
+        
+        <h3>Thêm Nhân viên mới</h3>
+        <form>
+            <table>
+                <tr>
+                    <td>Mã nhân viên:</td>
+                    <td><input type="text" name="manv" required></td>
+                </tr>
+                <tr>
+                    <td>Tên nhân viên:</td>
+                    <td><input type="text" name="tennv" required></td>
+                </tr>
+                <tr>
+                    <td>Chức vụ:</td>
+                    <td><input type="text" name="chucvu" required></td>
+                </tr>
+                <tr>
+                    <td>Số điện thoại:</td>
+                    <td><input type="text" name="sdt" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit">Thêm</button>
+                        <button type="reset">Làm mới</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+        <h3>Danh sách Nhân viên</h3>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Mã NV</th>
+                    <th>Tên NV</th>
+                    <th>Chức vụ</th>
+                    <th>SĐT</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>NV001</td>
+                    <td>Lê Văn C</td>
+                    <td>Nhân viên bán hàng</td>
+                    <td>0923456789</td>
+                    <td>
+                        <button>Sửa</button>
+                        <button>Xóa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>NV002</td>
+                    <td>Phạm Thị D</td>
+                    <td>Quản lý</td>
+                    <td>0934567890</td>
+                    <td>
+                        <button>Sửa</button>
+                        <button>Xóa</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Phần Quản lý Thanh toán -->
+    <div id="thanhtoan" style="display:none;">
+        <h2>QUẢN LÝ THANH TOÁN</h2>
+        
+        <h3>Thêm Thanh toán</h3>
+        <form>
+            <table>
+                <tr>
+                    <td>Mã thanh toán:</td>
+                    <td><input type="text" name="mathanhtoan" required></td>
+                </tr>
+                <tr>
+                    <td>Mã đơn hàng:</td>
+                    <td>
+                        <select name="madon" required>
+                            <option value="">-- Chọn đơn hàng --</option>
+                            <option value="DH001">DH001</option>
+                            <option value="DH002">DH002</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Phương thức:</td>
+                    <td>
+                        <select name="phuongthuc" required>
+                            <option value="">-- Chọn phương thức --</option>
+                            <option value="Tiền mặt">Tiền mặt</option>
+                            <option value="Chuyển khoản">Chuyển khoản</option>
+                            <option value="Thẻ tín dụng">Thẻ tín dụng</option>
+                            <option value="COD">COD</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ngày thanh toán:</td>
+                    <td><input type="date" name="ngaythanhtoan" required></td>
+                </tr>
+                <tr>
+                    <td>Trạng thái:</td>
+                    <td>
+                        <select name="trangthai" required>
+                            <option value="Chưa thanh toán">Chưa thanh toán</option>
+                            <option value="Đã thanh toán">Đã thanh toán</option>
+                            <option value="Hoàn tiền">Hoàn tiền</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit">Thêm</button>
+                        <button type="reset">Làm mới</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+        <h3>Danh sách Thanh toán</h3>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Mã TT</th>
+                    <th>Mã đơn</th>
+                    <th>Phương thức</th>
+                    <th>Ngày TT</th>
+                    <th>Trạng thái</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>TT001</td>
+                    <td>DH001</td>
+                    <td>Chuyển khoản</td>
+                    <td>20/01/2026</td>
+                    <td>Đã thanh toán</td>
+                    <td>
+                        <button>Sửa</button>
+                        <button>Xóa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>TT002</td>
+                    <td>DH002</td>
+                    <td>COD</td>
+                    <td>21/01/2026</td>
+                    <td>Đã thanh toán</td>
+                    <td>
+                        <button>Sửa</button>
+                        <button>Xóa</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Ẩn tất cả các phần
+            var sections = ['khachhang', 'sanpham', 'donhang', 'nhanvien', 'thanhtoan'];
+            sections.forEach(function(id) {
+                document.getElementById(id).style.display = 'none';
+            });
+            
+            // Hiện phần được chọn
+            document.getElementById(sectionId).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
