@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Đơn Hàng</title>
+    <link rel="stylesheet" href="baitieuluan1.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Hệ Thống Quản Lý Đơn Hàng</h1>
+        </header>
+
+        <nav class="main-menu">
+            <h3>Menu Chính Quản Lý Đơn Hàng</h3>
+            <div class="menu-buttons">
+                <button onclick="showSection('khachhang')">Khách Hàng</button>
+                <button onclick="showSection('nhanvien')">Nhân Viên</button>
+                <button onclick="showSection('sanpham')">Sản Phẩm</button>
+                <button onclick="showSection('donhang')">Đơn Hàng</button>
+                <button onclick="showSection('thanhtoan')">Thanh Toán</button>
+            </div>
+        </nav>
+        <section id="khachhang" class="content-section">
+            <h2>Quản Lý Khách Hàng</h2>
+            <div class="form-container">
+                <h3>Thêm Khách Hàng Mới</h3>
+                <form id="form-khachhang">
+                    <table class="form-table">
+                        <tbody>
+                            <tr>
+                                <td><label for="makh">Mã Khách Hàng:</label></td>
+                                <td><input type="text" id="makh" name="makh" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="tenkh">Tên Khách Hàng:</label></td>
+                                <td><input type="text" id="tenkh" name="tenkh" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="sdtkh">Số Điện Thoại:</label></td>
+                                <td><input type="tel" id="sdtkh" name="sdtkh" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="diachikh">Địa Chỉ:</label></td>
+                                <td><input type="text" id="diachikh" name="diachikh" required></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="button-group">
+                                    <button type="submit">Thêm</button>
+                                    <button type="reset">Xóa</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+
+            <div class="table-container">
+                <h3>Danh Sách Khách Hàng</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Mã Khách Hàng</th>
+                            <th>Tên Khách Hàng</th>
+                            <th>Số Điện Thoại</th>
+                            <th>Địa Chỉ</th>
+                            <th>Thao Tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-khachhang">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="nhanvien" class="content-section" style="display: none;">
+            <h2>Quản Lý Nhân Viên</h2>
+            <div class="form-container">
+                <h3>Thêm Thông Tin Nhân Viên</h3>
+                <form id="form-nhanvien">
+                    <table class="form-table">
+                        <tbody>
+                            <tr>
+                                <td><label for="manv">Mã Nhân Viên:</label></td>
+                                <td><input type="text" id="manv" name="manv" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="tennv">Tên Nhân Viên:</label></td>
+                                <td><input type="text" id="tennv" name="tennv" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="chucvu">Chức Vụ:</label></td>
+                                <td><input type="text" id="chucvu" name="chucvu" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="sdtnv">Số Điện Thoại:</label></td>
+                                <td><input type="tel" id="sdtnv" name="sdtnv" required></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="button-group">
+                                    <button type="submit">Thêm</button>
+                                    <button type="reset">Xóa</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+
+            <div class="table-container">
+                <h3>Danh Sách Nhân Viên</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Mã Nhân Viên</th>
+                            <th>Tên Nhân Viên</th>
+                            <th>Chức Vụ</th>
+                            <th>Số Điện Thoại</th>
+                            <th>Thao Tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-nhanvien">
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section id="sanpham" class="content-section" style="display: none;">
+            <h2>Quản Lý Sản Phẩm</h2>
+            <div class="form-container">
+                <h3>Thêm Sản Phẩm Mới</h3>
+                <form id="form-sanpham">
+                    <table class="form-table">
+                        <tbody>
+                            <tr>
+                                <td><label for="masp">Mã Sản Phẩm:</label></td>
+                                <td><input type="text" id="masp" name="masp" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="tensp">Tên Sản Phẩm:</label></td>
+                                <td><input type="text" id="tensp" name="tensp" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="dongia">Đơn Giá:</label></td>
+                                <td><input type="number" id="dongia" name="dongia" min="0" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="slt">Số Lượng Tồn:</label></td>
+                                <td><input type="number" id="slt" name="slt" min="0" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="maloai">Mã Loại:</label></td>
+                                <td>
+                                    <select id="maloai" name="maloai" required>
+                                        <option value="">--Chọn Loại--</option>
+                                        <option value="ML001">Điện Tử</option>
+                                        <option value="ML002">Thực Phẩm</option>
+                                        <option value="ML003">Thời Trang</option>
+                                        <option value="ML004">Vật Dụng</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label for="ghichu">Ghi Chú:</label></td>
+                                <td><textarea id="ghichu" name="ghichu" rows="4" cols="50" placeholder="Ghi chú vào đây"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="button-group">
+                                    <button type="submit">Thêm</button>
+                                    <button type="reset">Xóa</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+
+            <div class="table-container">
+                <h3>Danh Sách Sản Phẩm</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Mã Sản Phẩm</th>
+                            <th>Tên Sản Phẩm</th>
+                            <th>Đơn Giá</th>
+                            <th>Số Lượng Tồn</th>
+                            <th>Mã Loại</th>
+                            <th>Thao Tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-sanpham">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section id="donhang" class="content-section" style="display: none;">
+            <h2>Quản Lý Đơn Hàng</h2>
+            <div class="form-container">
+                <h3>Thêm Đơn Hàng Mới</h3>
+                <form id="form-donhang">
+                    <table class="form-table">
+                        <tbody>
+                            <tr>
+                                <td><label for="madon">Mã Đơn Hàng:</label></td>
+                                <td><input type="text" id="madon" name="madon" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="tenkhachhang">Khách Hàng:</label></td>
+                                <td><input type="text" id="tenkhachhang" name="tenkhachhang" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="sdtkhachhang">Số Điện Thoại:</label></td>
+                                <td><input type="tel" id="sdtkhachhang" name="sdtkhachhang" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="diachidonhang">Địa Chỉ:</label></td>
+                                <td><input type="text" id="diachidonhang" name="diachidonhang" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="nhanviengh">Nhân Viên Giao Hàng:</label></td>
+                                <td><input type="text" id="nhanviengh" name="nhanviengh" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="sdtnvgh">Số Điện Thoại NV:</label></td>
+                                <td><input type="tel" id="sdtnvgh" name="sdtnvgh" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="ngaydat">Ngày Đặt:</label></td>
+                                <td><input type="date" id="ngaydat" name="ngaydat" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="tongtien">Tổng Tiền:</label></td>
+                                <td><input type="number" id="tongtien" name="tongtien" min="0" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="trangthai">Trạng Thái:</label></td>
+                                <td>
+                                    <select id="trangthai" name="trangthai" required>
+                                        <option value="wait">Chờ Xử Lý</option>
+                                        <option value="delivery">Đang Giao Hàng</option>
+                                        <option value="done">Đã Giao</option>
+                                        <option value="cancel">Đã Hủy</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="button-group">
+                                    <button type="submit">Thêm</button>
+                                    <button type="reset">Xóa</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+
+            <div class="table-container">
+                <h3>Danh Sách Đơn Hàng</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Mã Đơn Hàng</th>
+                            <th>Khách Hàng</th>
+                            <th>Số ĐT KH</th>
+                            <th>Địa Chỉ</th>
+                            <th>NV Giao Hàng</th>
+                            <th>Số ĐT NV</th>
+                            <th>Ngày Đặt</th>
+                            <th>Tổng Tiền</th>
+                            <th>Trạng Thái</th>
+                            <th>Thao Tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-donhang">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section id="thanhtoan" class="content-section" style="display: none;">
+            <h2>Quản Lý Thanh Toán</h2>
+            <div class="form-container">
+                <h3>Cập Nhật Thanh Toán</h3>
+                <form id="form-thanhtoan">
+                    <table class="form-table">
+                        <tbody>
+                            <tr>
+                                <td><label for="mathanhtoan">Mã Thanh Toán:</label></td>
+                                <td><input type="text" id="mathanhtoan" name="mathanhtoan" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="madonhang">Mã Đơn Hàng:</label></td>
+                                <td><input type="text" id="madonhang" name="madonhang" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="phuongthuc">Phương Thức:</label></td>
+                                <td>
+                                    <select id="phuongthuc" name="phuongthuc" required>
+                                        <option value="">-- Chọn phương thức --</option>
+                                        <option value="apple">Apple Pay</option>
+                                        <option value="bank">Chuyển khoản ngân hàng</option>
+                                        <option value="card">Thẻ tín dụng</option>
+                                        <option value="visa">Thẻ Visa</option>
+                                        <option value="COD">COD</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label for="ngaythanhtoan">Ngày Thanh Toán:</label></td>
+                                <td><input type="date" id="ngaythanhtoan" name="ngaythanhtoan" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="trangthaithanhtoan">Trạng Thái:</label></td>
+                                <td>
+                                    <select id="trangthaithanhtoan" name="trangthaithanhtoan" required>
+                                        <option value="unpaid">Chưa thanh toán</option>
+                                        <option value="paid">Đã thanh toán</option>
+                                        <option value="refund">Hoàn tiền</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="button-group">
+                                    <button type="submit">Thêm</button>
+                                    <button type="reset">Làm mới</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+
+            <div class="table-container">
+                <h3>Danh Sách Thanh Toán</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Mã Thanh Toán</th>
+                            <th>Mã Đơn Hàng</th>
+                            <th>Phương Thức</th>
+                            <th>Ngày Thanh Toán</th>
+                            <th>Trạng Thái</th>
+                            <th>Thao Tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-thanhtoan">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="baitieuluan1.js"></script>
+</body>
+
+</html>
